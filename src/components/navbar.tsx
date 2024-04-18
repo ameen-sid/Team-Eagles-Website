@@ -64,7 +64,10 @@ export const NavBar = () => {
 	}
 
 	useEffect(() => {
-		window.addEventListener("resize", () => window.innerWidth >= 960 && setOpen(false));
+		window.addEventListener(
+			"resize",
+			() => window.innerWidth >= 960 && setOpen(false),
+		);
 	}, []);
 
 	return (
