@@ -1,5 +1,5 @@
 // Import the Required Modules
-import { NavBar } from "@/components";
+import { NavBar, Footer } from "@/components";
 import Hero from "./hero";
 import OurImpressiveStats from "./our-impressive-stats";
 import ExplorePlayers from "./explore-players";
@@ -13,6 +13,7 @@ export default function Home() {
       <OurImpressiveStats />
       <ExplorePlayers />
       <Events />
+      <Footer />
     </>
   );
 }
