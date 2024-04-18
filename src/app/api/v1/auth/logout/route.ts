@@ -6,7 +6,7 @@ import { NextRequest, NextResponse } from "next/server";
 connectDB();
 
 // Logout API
-export const PORT = async (request: NextRequest) => {
+export const POST = async (request: NextRequest) => {
 	try {
 		// create a response
 		const response = NextResponse.json({
@@ -18,7 +18,7 @@ export const PORT = async (request: NextRequest) => {
 		// removing cookies in response
 		response.cookies.set("token", "", { 
 			httpOnly: true, 
-			expires: new Date(0) 
+			maxAge: 0, 
 		});
 
 		// return a response
