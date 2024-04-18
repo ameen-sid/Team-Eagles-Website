@@ -7,7 +7,7 @@ import { generateToken } from "./generateVerificationToken";
 export const sendEmail = async ({ email, emailType, userId }:any) => {
 	try {
 		// generating token with unique userId
-		const token = generateToken(userId);
+		const token = await generateToken(userId);
 
 		// checking emailType
 		if( emailType === "VERIFY" ) {
