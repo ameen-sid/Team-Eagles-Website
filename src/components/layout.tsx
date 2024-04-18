@@ -4,7 +4,11 @@
 import React from "react";
 import { ThemeProvider } from "@material-tailwind/react";
 
-export const Layout = ({ children }:any) => {
+interface Props {
+	children: any
+}
+
+export const Layout = ({ children }: Props) => {
 	return <ThemeProvider>{ children }</ThemeProvider>;
 }
 
