@@ -2,6 +2,7 @@
 import { NavBar } from "@/components";
 import Hero from "./hero";
 import OurImpressiveStats from "./our-impressive-stats";
+import ExplorePlayers from "./explore-players";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <NavBar />
       <Hero />
       <OurImpressiveStats />
+      <ExplorePlayers />
     </>
   );
 }
