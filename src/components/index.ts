@@ -1,9 +1,9 @@
 "use client";
 
 export * from "./layout";
-export * from "./fixed-plugin";
-export * from "./navbar";
-export * from "./stats-card";
-export * from "./player-card"
-export * from "./event-card";
-export * from "./footer";
+export * from "./home/fixed-plugin";
+export * from "./common/navbar";
+export * from "./home/stats-card";
+export * from "./home/player-card"
+export * from "./home/event-card";
+export * from "./common/footer";
