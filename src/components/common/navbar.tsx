@@ -108,7 +108,7 @@ export const NavBar = () => {
 								onPointerEnterCapture={undefined} 
 								onPointerLeaveCapture={undefined}
 							>
-								Log in
+								Sign up
 							</Button>
 
 							<a
@@ -121,7 +121,7 @@ export const NavBar = () => {
 									onPointerEnterCapture={undefined} 
 									onPointerLeaveCapture={undefined}
 								>
-									Sign up
+									Log in
 								</Button>
 							</a>
 						</div>
