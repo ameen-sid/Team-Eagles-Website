@@ -159,16 +159,19 @@ export const NavBar = () => {
 							</ul>
 							
 							<div className="mt-6 mb-4 flex items-center gap-4">
-								<Button 
-									variant="text" 
-									placeholder={undefined} 
-									onPointerEnterCapture={undefined} 
-									onPointerLeaveCapture={undefined}
-								>
-									Log in
-								</Button>
+								<a href="http://localhost:3000/signup">
+									<Button 
+										variant="text" 
+										placeholder={undefined} 
+										onPointerEnterCapture={undefined} 
+										onPointerLeaveCapture={undefined}
+									>
+										Sign Up
+									</Button>
+								</a>
+								
 								<a
-                  					href="https://www.material-tailwind.com/blocks"
+                  					href="http://localhost:3000/login"
                   					target="_blank"
                 				>
                   					<Button 
@@ -177,7 +180,7 @@ export const NavBar = () => {
 										onPointerEnterCapture={undefined} 
 										onPointerLeaveCapture={undefined}
 									>
-										blocks
+										Login
 									</Button>
                 				</a>
 							</div>
