@@ -102,17 +102,21 @@ export const NavBar = () => {
 						</ul>
 
 						<div className="hidden items-center gap-4 lg:flex">
-							<Button 
-								variant="text" 
-								placeholder={undefined} 
-								onPointerEnterCapture={undefined} 
-								onPointerLeaveCapture={undefined}
+							<a 
+								href="http://localhost:3000/signup"
 							>
-								Sign up
-							</Button>
+								<Button 
+									variant="text" 
+									placeholder={undefined} 
+									onPointerEnterCapture={undefined} 
+									onPointerLeaveCapture={undefined}
+								>
+									Sign up
+								</Button>
+							</a>
 
 							<a
-                				href="https://www.material-tailwind.com/blocks"
+                				href="http://localhost:3000/login"
                 				target="_blank"
               				>
 								<Button 
