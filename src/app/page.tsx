@@ -1,9 +1,9 @@
 // Import the Required Modules
 import { NavBar, Footer } from "@/components";
-import Hero from "./hero";
-import OurImpressiveStats from "./our-impressive-stats";
-import ExplorePlayers from "./explore-players";
-import Events from "./events";
+import Hero from "./home/hero";
+import OurImpressiveStats from "./home/our-impressive-stats";
+import ExplorePlayers from "./home/explore-players";
+import Events from "./home/events";
 
 export default function Home() {
   return (
