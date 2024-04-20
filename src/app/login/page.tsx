@@ -18,7 +18,7 @@ const Login = () => {
 			placeholder={undefined} 
 			onPointerEnterCapture={undefined} 
 			onPointerLeaveCapture={undefined}
-			className="flex items-center justify-center m-24 border-2 p-12"
+			className="flex items-center justify-center mt-16 mr-2 ml-2 border-2 p-12"
 		>
 			<Typography 
 				variant="h4" 
@@ -88,30 +88,21 @@ const Login = () => {
 					/>
 				</div>
 
-				<Checkbox
-					label={
-						<Typography
-							variant="small"
-							color="gray"
-							className="flex items-center font-normal" 
-							placeholder={undefined} 
-							onPointerEnterCapture={undefined} 
-							onPointerLeaveCapture={undefined}
-						>
-							I agree the
-							<a
-								href="#"
-								className="font-medium transition-colors hover:text-gray-900"
-							>
-								&nbsp;Terms and Conditions
-							</a>
-						</Typography>
-					}
-					containerProps={{ className: "-ml-2.5" }} 
+				<Typography
+					variant="small"
+					color="gray"
+					className="flex items-center justify-end font-normal" 
+					placeholder={undefined} 
 					onPointerEnterCapture={undefined} 
-					onPointerLeaveCapture={undefined} 
-					crossOrigin={undefined}        		
-				/>
+					onPointerLeaveCapture={undefined}
+				>
+					<a
+						href="#"
+						className="font-medium transition-colors hover:text-gray-900"
+					>	
+						&nbsp;Forgot Password?
+					</a>
+				</Typography>
 
 				<Button 
 					className="mt-6" 
