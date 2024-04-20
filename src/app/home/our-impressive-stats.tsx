@@ -6,10 +6,10 @@ import { Typography } from "@material-tailwind/react";
 import StatsCard from "@/components/home/stats-card";
 
 // Import the Required Icons
-import kill from "../../public/image/icons/kills.png";
-import chickens from "../../public/image/icons/chickens.png";
-import players from "../../public/image/icons/players.png";
-import support from "../../public/image/icons/support.png";
+import kill from "../../../public/image/icons/kills.png";
+import chickens from "../../../public/image/icons/chickens.png";
+import players from "../../../public/image/icons/players.png";
+import support from "../../../public/image/icons/support.png";
 
 const STATS = [
 	{
