@@ -15,6 +15,7 @@ import {
 	Bars3Icon,
 } from "@heroicons/react/24/solid";
 
+// Nav Menu Data
 const NAV_MENU = [
 	{
 		name: "Page",
@@ -31,11 +32,13 @@ const NAV_MENU = [
 	},
 ];
 
+// Interface of NavItem props
 interface NavItemProps {
 	children: React.ReactNode;
 	href?: string;
 }
 
+// Function of NavItem Component
 const NavItem = ({ children, href }: NavItemProps) => {
 	return (
 		<li>
@@ -56,6 +59,7 @@ const NavItem = ({ children, href }: NavItemProps) => {
 	);
 }
 
+// Function of NavBar Component
 export const NavBar = () => {
 	const [open, setOpen] = useState(false);
 
@@ -192,4 +196,5 @@ export const NavBar = () => {
 	);
 }
 
+// Export the NavBar Component
 export default NavBar;

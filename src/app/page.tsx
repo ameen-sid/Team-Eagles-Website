@@ -5,6 +5,7 @@ import OurImpressiveStats from "./home/our-impressive-stats";
 import ExplorePlayers from "./home/explore-players";
 import Events from "./home/events";
 
+// Function of Home Page
 export default function Home() {
   return (
     <>

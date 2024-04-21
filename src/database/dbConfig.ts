@@ -1,6 +1,7 @@
 // Import the Required Modules
 import mongoose from "mongoose";
 
+// Function to connect to the Database
 export const connectDB = async () => {
 	try {
 		// check if MONGODB_URL exists in .env file, otherwise throw an error
@@ -31,7 +32,7 @@ export const connectDB = async () => {
 			process.exit(0);
 		});
 
-	} catch (error) {
+	} catch (error:any) {
 		console.error("Error connecting to database: ");
 		console.error(error);
 		process.exit(1);

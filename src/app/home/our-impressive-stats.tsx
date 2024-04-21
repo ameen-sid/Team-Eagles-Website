@@ -11,6 +11,7 @@ import chickens from "../../../public/image/icons/chickens.png";
 import players from "../../../public/image/icons/players.png";
 import support from "../../../public/image/icons/support.png";
 
+// Stats Data
 const STATS = [
 	{
 		icon: kill,
@@ -34,6 +35,7 @@ const STATS = [
 	},
 ];
 
+// Function of OurImpressiveStats Section
 export const OurImpressiveStats = () => {
 	return (
 		<section className="px-8 pt-60 mt-52">
@@ -73,4 +75,5 @@ export const OurImpressiveStats = () => {
 	);
 }
 
+// Export the OurImpressiveStats Section
 export default OurImpressiveStats;

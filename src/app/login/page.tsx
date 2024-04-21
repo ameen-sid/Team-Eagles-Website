@@ -12,6 +12,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
+// Function of Login Page
 const Login = () => {
 	const router = useRouter();
 
@@ -160,4 +161,5 @@ const Login = () => {
 	);
 }
 
+// Export the Login Page
 export default Login;

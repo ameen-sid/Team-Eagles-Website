@@ -2,8 +2,13 @@
 
 // Import the Required Modules
 import Image from "next/image";
-import { Button, Typography, Card } from "@material-tailwind/react";
+import { 
+	Button, 
+	Typography, 
+	Card 
+} from "@material-tailwind/react";
 
+// Function of Hero Section
 const Hero = () => {
 	return (
 		<div className="!flex h-[55vh] w-full items-center justify-between px-10">
@@ -61,4 +66,5 @@ const Hero = () => {
 	);
 }
 
+// Export the Hero Section
 export default Hero;

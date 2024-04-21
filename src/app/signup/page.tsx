@@ -13,6 +13,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
+// Function of Signup Page
 const Signup = () => {
 	const router = useRouter();
 
@@ -260,4 +261,5 @@ const Signup = () => {
 	);
 }
 
+// Export the Signup Page
 export default Signup;

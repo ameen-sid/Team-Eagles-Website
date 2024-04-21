@@ -1,6 +1,7 @@
 // Import the Required Modules
 import mongoose from "mongoose";
 
+// Player Schema
 const playerSchema = new mongoose.Schema({
 	playerName: {
 		type: String,
@@ -74,6 +75,7 @@ const playerSchema = new mongoose.Schema({
 	},
 });
 
+// Model
 const Player = mongoose.models.players || mongoose.model("players", playerSchema);
 
 // Export the Model

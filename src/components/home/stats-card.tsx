@@ -3,12 +3,14 @@ import React from "react";
 import { Card, Typography } from "@material-tailwind/react";
 import Image from "next/image";
 
+// Interface of StatsCard props
 interface StatsCardProps {
 	icon: any,
 	count: string,
 	title: string
 }
 
+// Function of StatsCard Component
 export const StatsCard = ({ icon, count, title }: StatsCardProps) => {
 	return (
 		<Card 
@@ -50,4 +52,5 @@ export const StatsCard = ({ icon, count, title }: StatsCardProps) => {
 	);
 }
 
+// Export the StatsCard Component
 export default StatsCard;

@@ -5,6 +5,7 @@ import React from "react";
 import { Typography } from "@material-tailwind/react";
 import EventCard from "@/components/home/event-card";
 
+// Events Data
 const EVENTS = [
 	{
 		img: "/image/blogs/blog-1.svg",
@@ -32,6 +33,7 @@ const EVENTS = [
 	},
 ];
 
+// Function of Events Section
 export const Events = () => {
 	return (
 		<section className="py-20 px-8">
@@ -67,4 +69,5 @@ export const Events = () => {
 	);
 }
 
+// Export the Events Section
 export default Events;

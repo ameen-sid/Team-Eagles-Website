@@ -1,6 +1,11 @@
 // Import the Required Modules
-import { Typography, Button, Input } from "@material-tailwind/react";
+import { 
+	Typography, 
+	Button, 
+	Input 
+} from "@material-tailwind/react";
 
+// Footer Links Data
 const LINKS = [
 	{
 		title: "Company",
@@ -16,8 +21,10 @@ const LINKS = [
 	},
 ];
 
+// Current Year
 const CURRENT_YEAR = new Date().getFullYear();
 
+// Function of Footer Component
 export const Footer = () => {
 	return (
 		<footer className="px-8 pt-24 pb-8">
@@ -141,4 +148,5 @@ export const Footer = () => {
 	);
 }
 
+// Export the Footer Component
 export default Footer;

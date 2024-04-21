@@ -13,7 +13,8 @@ import {
 import axios from "axios";
 import toast from "react-hot-toast";
 
-const verifyEmail = () => {
+// Function of VerifyEmail Page
+const VerifyEmail = () => {
 	const [code, setCode] = useState({
 		passcode: "",
 		token: ""
@@ -104,4 +105,5 @@ const verifyEmail = () => {
 	);
 }
 
-export default verifyEmail;
+// Export the VerifyEmail Page
+export default VerifyEmail;

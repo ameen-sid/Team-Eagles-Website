@@ -1,6 +1,7 @@
 // Import the Required Modules
 import mongoose from "mongoose";
 
+// User Schema
 const userSchema = new mongoose.Schema({
 	userName: {
 		type: String,
@@ -38,6 +39,7 @@ const userSchema = new mongoose.Schema({
 	verifyEmailTokenExpiry: Date,
 });
 
+// Model
 const User = mongoose.models.users || mongoose.model("users", userSchema);
 
 // Export the Model

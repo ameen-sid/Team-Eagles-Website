@@ -9,6 +9,7 @@ import {
 	Button
 } from "@material-tailwind/react";
 
+// Interface of EventCard props
 interface EventCardProps {
 	img: string;
 	title: string;
@@ -16,6 +17,7 @@ interface EventCardProps {
 	buttonLabel: string;
 }
 
+// Function of EventCard Component
 export const EventCard = ({ img, title, desc, buttonLabel }: EventCardProps) => {
 	return (
 		<Card 
@@ -82,4 +84,5 @@ export const EventCard = ({ img, title, desc, buttonLabel }: EventCardProps) => 
 	);
 }
 
+// Export the EventCard Component
 export default EventCard;

@@ -4,6 +4,7 @@
 import { Typography } from "@material-tailwind/react";
 import PlayerCard from "@/components/home/player-card";
 
+// Players Data
 const PLAYERS = [
 	{
 		img: "/image/blogs/blog4.svg",
@@ -49,6 +50,7 @@ const PLAYERS = [
 	},
 ];
 
+// Function ExlorePlayers Section
 export const ExplorePlayers = () => {
 	return (
 		<section className="px-8 mt-40">
@@ -73,4 +75,5 @@ export const ExplorePlayers = () => {
 	);
 }
 
+// Export the ExplorePlayers Section
 export default ExplorePlayers;

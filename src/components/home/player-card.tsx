@@ -8,6 +8,7 @@ import {
 } from "@material-tailwind/react";
 import Image from "next/image";
 
+// Interface of PlayerCard props
 interface PlayerCardProps {
 	img: string;
 	tag: string;
@@ -16,6 +17,7 @@ interface PlayerCardProps {
 	label: string;
 }
 
+// Function of PlayerCard Component
 export const PlayerCard = ({ img, tag, title, desc, label }: PlayerCardProps) => {
 	return (
 		<Card 
@@ -91,4 +93,5 @@ export const PlayerCard = ({ img, tag, title, desc, label }: PlayerCardProps) =>
 	);
 }
 
+// Export the PlayerCard Component
 export default PlayerCard;
