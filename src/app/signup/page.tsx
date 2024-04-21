@@ -1,7 +1,7 @@
 "use client";
 
 // Import the Required Modules
-import React from "react";
+import React, { useState } from "react";
 import {
 	Card,
 	Input,
@@ -9,8 +9,42 @@ import {
 	Button,
 	Typography
 } from "@material-tailwind/react";
+import axios from "axios";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 const Signup = () => {
+	const router = useRouter();
+
+	const [user, setUser] = useState({
+		userName: "", 
+		email: "", 
+		phoneNumber: "", 
+		password: "",
+		confirmPassword: ""
+	});
+
+	const onSignup = async () => {
+		try {
+			const response = await axios.post("/api/v1/auth/signup", user);
+			console.log("Signup Status: ", response.data);
+			toast.success("Signup Successfully");
+
+			setUser({
+				userName: "", 
+				email: "", 
+				phoneNumber: "", 
+				password: "",
+				confirmPassword: ""
+			});
+
+			router.push("/login");
+		} catch(error:any) {
+			console.log("Signup Failed");
+			toast.error(error.message);
+		}
+	}
+
 	return (
 		<Card 
 			color="transparent" 
@@ -54,8 +88,12 @@ const Signup = () => {
           			</Typography>
 					<Input
 						size="lg"
-						placeholder="name@mail.com"
+						placeholder="userName"
 						className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+						type="text"
+						id="userName"
+						value={user.userName}
+						onChange={(e) => setUser({...user, userName: e.target.value})}
 						labelProps={{
 							className: "before:content-none after:content-none",
 						}} 
@@ -78,9 +116,13 @@ const Signup = () => {
 						size="lg"
 						placeholder="name@mail.com"
 						className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+						type="text"
+						id="email"
+						value={user.email}
+						onChange={(e) => setUser({...user, email: e.target.value})}
 						labelProps={{
 							className: "before:content-none after:content-none",
-						}} 
+						}}
 						onPointerEnterCapture={undefined} 
 						onPointerLeaveCapture={undefined} 
 						crossOrigin={undefined}
@@ -98,8 +140,12 @@ const Signup = () => {
           			</Typography>
 					<Input
 						size="lg"
-						placeholder="name@mail.com"
+						placeholder="phone number"
 						className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+						type="number"
+						id="phoneNumber"
+						value={user.phoneNumber}
+						onChange={(e) => setUser({...user, phoneNumber: e.target.value})}
 						labelProps={{
 							className: "before:content-none after:content-none",
 						}} 
@@ -123,6 +169,9 @@ const Signup = () => {
 						size="lg"
 						placeholder="********"
 						className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+						id="password"
+						value={user.password}
+						onChange={(e) => setUser({...user, password: e.target.value})}
 						labelProps={{
 							className: "before:content-none after:content-none",
 						}} 
@@ -146,6 +195,9 @@ const Signup = () => {
 						size="lg"
 						placeholder="********"
 						className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+						id="confirmPassword"
+						value={user.confirmPassword}
+						onChange={(e) => setUser({...user, confirmPassword: e.target.value})}
 						labelProps={{
 							className: "before:content-none after:content-none",
 						}} 
@@ -181,6 +233,7 @@ const Signup = () => {
 				/>
 
 				<Button 
+					onClick={onSignup}
 					className="mt-6" 
 					fullWidth 
 					placeholder={undefined} 
