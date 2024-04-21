@@ -1,16 +1,37 @@
 "use client";
 
 // Import the Required Modules
-import React from "react";
+import React, { useState } from "react";
 import {
 	Card,
 	Input,
-	Checkbox,
 	Button,
 	Typography
 } from "@material-tailwind/react";
+import axios from "axios";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
+	const router = useRouter();
+
+	const [user, setUser] = useState({
+		userName: "", password: ""
+	});
+
+	const onLogin = async () => {
+		try {
+			const response = await axios.post("/api/v1/auth/login", user);
+			console.log("Login Status: ", response.data);
+			toast.success("Login Successful");
+
+			router.push("/dashboard");
+		} catch (error:any) {
+			console.log("Login Failed");
+			toast.error(error.response.data.message);
+		}
+	}
+
 	return (
 		<Card 
 			color="transparent" 
@@ -54,6 +75,10 @@ const Login = () => {
           			</Typography>
 					<Input
 						size="lg"
+						type="text"
+						id="userName"
+						value={user.userName}
+						onChange={(e) => setUser({...user, userName: e.target.value})}
 						placeholder="name@mail.com"
 						className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
 						labelProps={{
@@ -77,6 +102,9 @@ const Login = () => {
 					<Input
 						type="password"
 						size="lg"
+						id="password"
+						value={user.password}
+						onChange={(e) => setUser({...user, password: e.target.value})}
 						placeholder="********"
 						className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
 						labelProps={{
@@ -105,6 +133,7 @@ const Login = () => {
 				</Typography>
 
 				<Button 
+					onClick={onLogin}
 					className="mt-6" 
 					fullWidth 
 					placeholder={undefined} 
