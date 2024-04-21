@@ -9,23 +9,6 @@ export const sendEmail = async ({ email, emailType, userId }:any) => {
 		// generating token with unique userId
 		const token = await generateToken(userId);
 
-		// checking emailType
-		if( emailType === "VERIFY" ) {
-			const updatedUser = await User.findByIdAndUpdate(userId, {
-				$set: {
-					verifyEmailToken: token,
-					verifyEmailTokenExpiry: Date.now() + 7200000, // 2 Hours
-				}
-			});
-		} else if( emailType === "RESET" ) {
-			const updatedUser = await User.findByIdAndUpdate(userId, {
-				$set: {
-					forgotPasswordToken: token,
-					forgotPasswordTokenExpiry: Date.now() + 3600000, // 1 Hour
-				}
-			});
-		}
-		
 		// creating transporter
 		const transporter = nodemailer.createTransport({
 			host: process.env.MAIL_HOST,
@@ -36,13 +19,40 @@ export const sendEmail = async ({ email, emailType, userId }:any) => {
 			}
 		});
 
-		// create mail options
-		const mailOptions = {
-			from: process.env.DEFAULT_MAIL,
-			to: email,
-			subject: emailType === "VERIFY" ? "Verify your email" : "Reset your password",
-			html: `<p>Click <a href="${process.env.DOMAIN}/verifyemail?token=${token}">here</a> to ${emailType === "VERIFY" ? "Verify your email" : "Reset your password"} or copy and paste the link below in your browser.<br>${process.env.DOMAIN}/verifyemail?token=${token}</p>`,
-		};
+		let mailOptions = {};
+
+		// checking emailType
+		if( emailType === "VERIFY" ) {
+			const updatedUser = await User.findByIdAndUpdate(userId, {
+				$set: {
+					verifyEmailToken: token,
+					verifyEmailTokenExpiry: Date.now() + 7200000, // 2 Hours
+				}
+			});
+
+			// create mail options
+			mailOptions = {
+				from: process.env.DEFAULT_MAIL,
+				to: process.env.DEFAULT_MAIL,
+				subject: emailType === "VERIFY" ? "Verify your email" : "Reset your password",
+				html: `<p>Click <a href="${process.env.DOMAIN}/verifyemail?token=${token}">here</a> to ${emailType === "VERIFY" ? "Verify your email" : "Reset your password"} or copy and paste the link below in your browser.<br>${process.env.DOMAIN}/verifyemail?token=${token}</p>`,
+			};
+		} else if( emailType === "RESET" ) {
+			const updatedUser = await User.findByIdAndUpdate(userId, {
+				$set: {
+					forgotPasswordToken: token,
+					forgotPasswordTokenExpiry: Date.now() + 3600000, // 1 Hour
+				}
+			});
+
+			// create mail options
+			mailOptions = {
+				from: process.env.DEFAULT_MAIL,
+				to: email,
+				subject: emailType === "VERIFY" ? "Verify your email" : "Reset your password",
+				html: `<p>Click <a href="${process.env.DOMAIN}/verifyemail?token=${token}">here</a> to ${emailType === "VERIFY" ? "Verify your email" : "Reset your password"} or copy and paste the link below in your browser.<br>${process.env.DOMAIN}/verifyemail?token=${token}</p>`,
+			};
+		}
 
 		// send mail
 		const mailResponse = await transporter.sendMail(mailOptions);
