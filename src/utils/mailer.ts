@@ -34,8 +34,8 @@ export const sendEmail = async ({ email, emailType, userId }:any) => {
 			mailOptions = {
 				from: process.env.DEFAULT_MAIL,
 				to: process.env.DEFAULT_MAIL,
-				subject: emailType === "VERIFY" ? "Verify your email" : "Reset your password",
-				html: `<p>Click <a href="${process.env.DOMAIN}/verifyemail?token=${token}">here</a> to ${emailType === "VERIFY" ? "Verify your email" : "Reset your password"} or copy and paste the link below in your browser.<br>${process.env.DOMAIN}/verifyemail?token=${token}</p>`,
+				subject: "Verify your email",
+				html: `<p>Click <a href="${process.env.DOMAIN}/verifyemail?token=${token}">here</a> to "Verify your email" or copy and paste the link below in your browser.<br>${process.env.DOMAIN}/verifyemail?token=${token}</p>`,
 			};
 		} else if( emailType === "RESET" ) {
 			const updatedUser = await User.findByIdAndUpdate(userId, {
@@ -49,8 +49,8 @@ export const sendEmail = async ({ email, emailType, userId }:any) => {
 			mailOptions = {
 				from: process.env.DEFAULT_MAIL,
 				to: email,
-				subject: emailType === "VERIFY" ? "Verify your email" : "Reset your password",
-				html: `<p>Click <a href="${process.env.DOMAIN}/verifyemail?token=${token}">here</a> to ${emailType === "VERIFY" ? "Verify your email" : "Reset your password"} or copy and paste the link below in your browser.<br>${process.env.DOMAIN}/verifyemail?token=${token}</p>`,
+				subject: "Reset your password",
+				html: `<p>Click <a href="${process.env.DOMAIN}/forgotpassword?token=${token}">here</a> to "Reset your password" or copy and paste the link below in your browser.<br>${process.env.DOMAIN}/forgotpassword?token=${token}</p>`,
 			};
 		}
 
