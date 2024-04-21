@@ -11,7 +11,25 @@ export const POST = async (request: NextRequest) => {
 	try {
 		// fetch data from request body
 		const body = await request.json();
-		const { token } = body;
+		const { token, passcode } = body;
+
+		// validate passcode
+		if(!passcode) {
+			return NextResponse.json({
+				status: 400,
+				success: false,
+				message: "Please provide passcode",
+			});
+		}
+
+		// check passcode is correct or not
+		if(passcode != process.env.VERIFICATION_PASSCODE) {
+			return NextResponse.json({
+				status: 500,
+				success: false,
+				message: "Passcode is invalid",
+			});
+		}
 
 		// find user in database and check token expiry
 		const user = await User.findOne({
