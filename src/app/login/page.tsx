@@ -126,7 +126,7 @@ const Login = () => {
 					onPointerLeaveCapture={undefined}
 				>
 					<a
-						href="#"
+						href="http://localhost:3000/reset-password-email"
 						className="font-medium transition-colors hover:text-gray-900"
 					>	
 						&nbsp;Forgot Password?
