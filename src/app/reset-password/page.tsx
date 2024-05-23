@@ -27,7 +27,7 @@ const ResetPassword = () => {
 	useEffect(() => {
 		const urlToken = window.location.search.split("=")[1];
 		setData({ ...data, token: urlToken });
-	},[]);
+	});
 
 	const setNewPassword = async () => {
 		try {
