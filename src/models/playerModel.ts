@@ -61,17 +61,14 @@ const playerSchema = new mongoose.Schema({
 	instagramLink: {
 		type: String,
 		trim: true,
-		unique: true,
 	},
 	facebookLink: {
 		type: String,
 		trim: true,
-		unique: true,
 	},
-	xLink: {
+	youTubeLink: {
 		type: String,
 		trim: true,
-		unique: true,
 	},
 });
 
