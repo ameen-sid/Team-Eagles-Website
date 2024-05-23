@@ -29,7 +29,7 @@ export const POST = async (request: NextRequest) => {
 
 		if(!user) {
 			return NextResponse.json({
-				status: 404,
+				status: 401,
 				success: false,
 				mesagge: "User does not registered, please sign up first!",
 			});
@@ -41,13 +41,13 @@ export const POST = async (request: NextRequest) => {
 		// if password is not valid
 		if(!validPassword) {
 			return NextResponse.json({
-				status: 403,
+				status: 401,
 				success: false,
 				message: "Check your credentials",
 			});
 		}
 
-		// creating payload
+		// creating the payload
 		const tokenData = {
 			id: user._id,
 		};
