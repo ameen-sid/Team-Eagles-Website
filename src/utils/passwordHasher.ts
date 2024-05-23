@@ -2,7 +2,7 @@
 import bcryptjs from "bcryptjs";
 
 // Function to Send Email
-export const hashPassword = async (password: string) => {
+export const hashPassword = async (password: any) => {
 	try {
 		const salt = await bcryptjs.genSalt(10);
 
