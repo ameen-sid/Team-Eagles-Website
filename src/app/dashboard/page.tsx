@@ -9,7 +9,7 @@ const Dashboard = () => {
         	Coming Soon
     	</h1>
     	<p className="text-white text-center text-lg mb-8">
-	        We're working hard to bring you something amazing. Stay tuned!
+	        We are working hard to bring you something amazing. Stay tuned!
     	</p>
 	</div>
   )
