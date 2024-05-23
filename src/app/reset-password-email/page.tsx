@@ -22,12 +22,13 @@ const ResetPasswordEmail = () => {
 	const sendEmail = async () => {
 		try {
 			const response = await axios.post("/api/v1/auth/reset-password-email", data);
-			console.log("SendEmail Status: ", response.data);
+			// console.log("SendEmail Status: ", response.data);
 			toast.success("Email Send Successfully");
 
 			setData({
 				email: ""
 			});
+			
 		} catch(error:any) {
 			console.log("Failed to Send Email");
 			toast.error(error.message);
