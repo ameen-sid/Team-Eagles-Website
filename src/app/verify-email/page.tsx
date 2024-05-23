@@ -36,7 +36,7 @@ const VerifyEmail = () => {
     	// const urlToken = query.token;
 
 		setCode({ ...code, token: urlToken });
-	},[]);
+	},[code]);
 
 	const verify = async () => {
 		try {
