@@ -9,11 +9,11 @@ import { uploadImageToCloudinary } from "@/utils/imageUploader";
 connectDB();
 
 // Disable Next.js body parser to use formidable
-export const config = {
-	api: {
-		bodyParser: false,
-	},
-};
+// export const config = {
+// 	api: {
+// 		bodyParser: false,
+// 	},
+// };
 
 // Update Player Display Picture API
 export const POST = async (request: NextRequest) => {
