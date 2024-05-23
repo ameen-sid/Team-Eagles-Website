@@ -45,7 +45,7 @@ export const POST = async (request: NextRequest) => {
 		}
 
 		// hash the password
-		const hashedPassword = hashPassword(password);
+		const hashedPassword = await hashPassword(password);
 
 		// create entry in database
 		const newUser = new User({
