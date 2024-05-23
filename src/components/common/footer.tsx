@@ -48,7 +48,7 @@ export const Footer = () => {
 									<li key={link}>
 										<Typography
 											as="a"
-											href="#"
+											href={`/${link.toLowerCase()}`}
 											className="py-1 font-normal !text-gray-700 transition-colors hover:!text-gray-900" 
 											placeholder={undefined} 
 											onPointerEnterCapture={undefined} 
@@ -79,7 +79,7 @@ export const Footer = () => {
 							onPointerEnterCapture={undefined} 
 							onPointerLeaveCapture={undefined}
 						>
-              				Get access to subscriber exclusive deals and be the first who gets informed about fresh sales.
+              				Get access to subscriber exclusive deals and be the first who gets informed about new events.
             			</Typography>
             			
 						<Typography 
@@ -104,7 +104,7 @@ export const Footer = () => {
 								>
                   					agree the{" "}
                   					<a
-                    					href="#"
+                    					href="/terms-and-conditions"
                     					className="font-bold underline hover:text-gray-900 transition-colors"
                   					>
                     					Terms and Conditions{" "}
@@ -138,8 +138,8 @@ export const Footer = () => {
             			Material Tailwind
           			</a>{" "}
           			by{" "}
-          			<a href="https://www.creative-tim.com" target="_blank">
-            			Creative Tim
+          			<a href="https://github.com/ameen-sid" target="_blank">
+            			Ameen Sid
           			</a>
           			.
         		</Typography>
