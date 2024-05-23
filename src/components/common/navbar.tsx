@@ -1,5 +1,6 @@
 // Import the Required Modules
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 import { 
 	Navbar as MTNavbar,
 	Collapse,
@@ -8,9 +9,9 @@ import {
 	Typography,
 } from "@material-tailwind/react";
 import {
-	RectangleStackIcon,
-  	UserCircleIcon,
-	CommandLineIcon,
+	StarIcon,
+	TrophyIcon,
+	UserGroupIcon,
 	XMarkIcon,
 	Bars3Icon,
 } from "@heroicons/react/24/solid";
@@ -18,17 +19,19 @@ import {
 // Nav Menu Data
 const NAV_MENU = [
 	{
-		name: "Page",
-		icon: RectangleStackIcon,
+		name: "Leaderboard",
+		icon: TrophyIcon,
+		href: "/leaderboard",
 	},
 	{
-		name: "Account",
-		icon: UserCircleIcon,
+		name: "Achievements",
+		icon: StarIcon,
+		href: "/achievements",
 	},
 	{
-		name: "Docs",
-		icon: CommandLineIcon,
-		href: "https://www.material-tailwind.com/docs/react/installation",
+		name: "Join Team",
+		icon: UserGroupIcon,
+		href: "/join-team",
 	},
 ];
 
@@ -44,7 +47,7 @@ const NavItem = ({ children, href }: NavItemProps) => {
 		<li>
 			<Typography
 				as="a"
-				href={href || "#"}
+				href={href}
 				target={href ? "_blank" : "_self"}
 				variant="paragraph"
 				color="gray"
@@ -86,15 +89,17 @@ export const NavBar = () => {
 					onPointerLeaveCapture={undefined}				
 				>
 					<div className="flex items-center justify-between">
-						<Typography 
-							color="blue-gray" 
-							className="text-lg font-bold" 
-							placeholder={undefined} 
-							onPointerEnterCapture={undefined} 
-							onPointerLeaveCapture={undefined}
-						>
-							Team Eagles
-						</Typography>
+						<Link href="/">
+							<Typography 
+								color="blue-gray" 
+								className="text-lg font-bold" 
+								placeholder={undefined} 
+								onPointerEnterCapture={undefined} 
+								onPointerLeaveCapture={undefined}
+							>
+								Team Eagles
+							</Typography>
+						</Link>
 
 						<ul className="ml-10 hidden items-center gap-8 lg:flex">
 							{ NAV_MENU.map(({ name, icon: Icon, href }) => (
@@ -106,8 +111,8 @@ export const NavBar = () => {
 						</ul>
 
 						<div className="hidden items-center gap-4 lg:flex">
-							<a 
-								href="http://localhost:3000/signup"
+							<Link 
+								href="/signup"
 							>
 								<Button 
 									variant="text" 
@@ -117,11 +122,10 @@ export const NavBar = () => {
 								>
 									Sign up
 								</Button>
-							</a>
+							</Link>
 
-							<a
-                				href="http://localhost:3000/login"
-                				target="_blank"
+							<Link
+                				href="/login"
               				>
 								<Button 
 									color="gray"
@@ -131,7 +135,7 @@ export const NavBar = () => {
 								>
 									Log in
 								</Button>
-							</a>
+							</Link>
 						</div>
 
 						<IconButton
@@ -163,7 +167,7 @@ export const NavBar = () => {
 							</ul>
 							
 							<div className="mt-6 mb-4 flex items-center gap-4">
-								<a href="http://localhost:3000/signup">
+								<Link href="/signup">
 									<Button 
 										variant="text" 
 										placeholder={undefined} 
@@ -172,11 +176,10 @@ export const NavBar = () => {
 									>
 										Sign Up
 									</Button>
-								</a>
+								</Link>
 								
-								<a
-                  					href="http://localhost:3000/login"
-                  					target="_blank"
+								<Link
+                  					href="/login"
                 				>
                   					<Button 
 										color="gray" 
@@ -186,7 +189,7 @@ export const NavBar = () => {
 									>
 										Login
 									</Button>
-                				</a>
+                				</Link>
 							</div>
 						</div>
 					</Collapse>
