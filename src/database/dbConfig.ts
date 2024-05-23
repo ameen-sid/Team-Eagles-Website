@@ -1,7 +1,7 @@
 // Import the Required Modules
 import mongoose from "mongoose";
 
-// Function to connect to the Database
+// Function to Connect to the Database
 export const connectDB = async () => {
 	try {
 		// check if MONGODB_URL exists in .env file, otherwise throw an error
