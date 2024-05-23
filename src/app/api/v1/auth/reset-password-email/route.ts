@@ -2,7 +2,7 @@
 import { connectDB } from "@/database/dbConfig";
 import User from "@/models/userModel";
 import { NextRequest, NextResponse } from "next/server";
-import { sendEmail } from "@/utils/mailer";
+import { sendEmail } from "@/utils/mailSender";
 
 // Connect to Database
 connectDB();
@@ -28,14 +28,14 @@ export const POST = async (request: NextRequest) => {
 
 		if(!user) {
 			return NextResponse.json({
-				status: 404,
+				status: 401,
 				success: false,
 				mesagge: "User does not registered, please sign up first!",
 			});
 		}
 
 		// send email
-		sendEmail({ email, emailType:"RESET", userId:user._id });
+		await sendEmail({ email, emailType:"RESET", userId:user._id });
 
 		// return a response
 		return NextResponse.json({
