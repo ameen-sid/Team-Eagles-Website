@@ -67,7 +67,7 @@ const ResetPasswordEmail = () => {
 						onPointerEnterCapture={undefined} 
 						onPointerLeaveCapture={undefined}					
 					>
-						Don't worry! It happens. Please enter the address associated with your account.
+						Do not worry! It happens. Please enter the address associated with your account.
 					</Typography>
         			
 					<Input 
