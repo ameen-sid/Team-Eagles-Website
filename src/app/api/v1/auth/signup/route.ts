@@ -2,8 +2,8 @@
 import { connectDB } from "@/database/dbConfig";
 import User from "@/models/userModel";
 import { NextRequest, NextResponse } from "next/server";
-import bcryptjs from "bcryptjs";
-import { sendEmail } from "@/utils/mailer";
+import { sendEmail } from "@/utils/mailSender";
+import { hashPassword } from "@/utils/passwordHasher";
 
 // Connect to Database
 connectDB();
@@ -18,7 +18,7 @@ export const POST = async (request: NextRequest) => {
 		// validation on fetched data
 		if(!userName || !email || !phoneNumber || !password || !confirmPassword) {
 			return NextResponse.json({
-				status: 403,
+				status: 400,
 				success: false,
 				message: "Please fill all the fields",
 			});
@@ -27,7 +27,7 @@ export const POST = async (request: NextRequest) => {
 		// match password and confirm password
 		if(password !== confirmPassword) {
 			return NextResponse.json({
-				status: 402,
+				status: 400,
 				success: false,
 				message: "Password and Confirm Password does not match",
 			});
@@ -38,15 +38,14 @@ export const POST = async (request: NextRequest) => {
 
 		if(user) {
 			return NextResponse.json({
-				status: 400,
+				status: 409,
 				success: false,
 				message: "User is already exists",
 			});
 		}
 
 		// hash the password
-		const salt = await bcryptjs.genSalt(10);
-		const hashedPassword = await bcryptjs.hash(password, salt);
+		const hashedPassword = hashPassword(password);
 
 		// create entry in database
 		const newUser = new User({
@@ -56,8 +55,10 @@ export const POST = async (request: NextRequest) => {
 			password: hashedPassword,
 			image: `https://api.dicebear.com/7.x/initials/svg?seed=${userName}`
 		});
+
+		// save the user
 		const savedUser = await newUser.save();
-		console.log(savedUser);
+		// console.log(savedUser);
 		
 		// send verification email to user
 		await sendEmail({ email, emailType: "VERIFY", userId: savedUser._id });
