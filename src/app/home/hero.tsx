@@ -2,6 +2,7 @@
 
 // Import the Required Modules
 import Image from "next/image";
+import Link from "next/link";
 import { 
 	Button, 
 	Typography, 
@@ -50,14 +51,16 @@ const Hero = () => {
 						</Typography>
 
 						<div className="mb-8 flex justify-center gap-4 lg:justify-start">
-							<Button 
-								color="gray" 
-								placeholder={undefined} 
-								onPointerEnterCapture={undefined} 
-								onPointerLeaveCapture={undefined}
-							>
-								view all players
-							</Button>
+							<Link href={"/all-players"}>
+								<Button 
+									color="gray" 
+									placeholder={undefined} 
+									onPointerEnterCapture={undefined} 
+									onPointerLeaveCapture={undefined}
+								>
+									view all players
+								</Button>
+							</Link>
 						</div>
 					</Card>
 				</div>
