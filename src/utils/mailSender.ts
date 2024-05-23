@@ -39,7 +39,7 @@ export const sendEmail = async ({ email, emailType, userId }: sendEmailProps) =>
 
 			// create mail options
 			mailOptions = {
-				from: process.env.DEFAULT_MAIL,
+				from: `Team Eagles - ${process.env.DEFAULT_MAIL}`,
 				to: process.env.GRAND_ADMIN_MAIL,
 				subject: "Verify Your Email",
 				html: `<p>Click <a href="${process.env.DOMAIN}/verify-email?token=${token}">here</a> to "Verify your email" or copy and paste the link below in your browser.<br>${process.env.DOMAIN}/verify-email?token=${token}</p>`,
@@ -54,7 +54,7 @@ export const sendEmail = async ({ email, emailType, userId }: sendEmailProps) =>
 
 			// create mail options
 			mailOptions = {
-				from: process.env.DEFAULT_MAIL,
+				from: `Team Eagles - ${process.env.DEFAULT_MAIL}`,
 				to: email,
 				subject: "Reset Your Password",
 				html: `<p>Click <a href="${process.env.DOMAIN}/reset-password?token=${token}">here</a> to "Reset your password" or copy and paste the link below in your browser.<br>${process.env.DOMAIN}/forgot-password?token=${token}</p>`,
