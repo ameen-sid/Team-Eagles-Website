@@ -2,6 +2,7 @@
 
 // Import the Required Modules
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { Typography } from '@material-tailwind/react';
 import axios from 'axios';
 import { NavBar, Footer } from '@/components';
@@ -78,7 +79,7 @@ const Player = (context:any) => {
 
 		getPlayer();
 		
-	}, [playername]);
+	}, []);
 
   return (
 	<>
@@ -88,10 +89,10 @@ const Player = (context:any) => {
         	<div id="container" className="p-10 border-2 sm:p-16 md:p-20 lg:p-24 xl:p-20 w-auto flex lg:flex-row flex-col gap-8 md:flex px-4 sm:px-8 md:px-24 lg:px-24 xl:px-24 relative">
           		<div className='flex gap-6 flex-col items-center justify-center'>
 			  		<div>
-						<img
-							className="rounded-lg max-w-[400px] w-full h-auto md:w-auto md:h-auto"
+						<Image
 							src={player.image}
 							alt="image of myself"
+							className="rounded-lg max-w-[400px] w-full h-auto md:w-auto md:h-auto"
 						/>
 					</div>
 
