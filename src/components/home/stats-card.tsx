@@ -1,7 +1,7 @@
 // Import the Required Modules
 import React from "react";
-import { Card, Typography } from "@material-tailwind/react";
 import Image from "next/image";
+import { Card, Typography } from "@material-tailwind/react";
 
 // Interface of StatsCard props
 interface StatsCardProps {
