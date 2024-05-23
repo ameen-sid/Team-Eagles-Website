@@ -1,4 +1,6 @@
 // Import the Required Modules
+import Link from "next/link";
+import Image from "next/image";
 import {
 	Typography,
 	Card,
@@ -6,19 +8,20 @@ import {
 	CardHeader,
 	Button
 } from "@material-tailwind/react";
-import Image from "next/image";
 
 // Interface of PlayerCard props
 interface PlayerCardProps {
-	img: string;
-	tag: string;
-	title: string;
-	desc: string;
-	label: string;
+	image: string;
+	role: string;
+	playerName: string;
+	frags: string;
+	chickens: string;
+	kd: string;
+	avgDamage: string;
 }
 
 // Function of PlayerCard Component
-export const PlayerCard = ({ img, tag, title, desc, label }: PlayerCardProps) => {
+export const PlayerCard = ({ image, role, playerName, frags, chickens, kd, avgDamage }: PlayerCardProps) => {
 	return (
 		<Card 
 			className="border" 
@@ -35,8 +38,8 @@ export const PlayerCard = ({ img, tag, title, desc, label }: PlayerCardProps) =>
 				<Image
 					width={768}
 					height={768}
-					src={img}
-					alt={title}
+					src={image}
+					alt={playerName}
 					className="h-full w-full object-cover scale-[1.1]"
 				/>
 			</CardHeader>
@@ -55,11 +58,11 @@ export const PlayerCard = ({ img, tag, title, desc, label }: PlayerCardProps) =>
 						onPointerEnterCapture={undefined} 
 						onPointerLeaveCapture={undefined}          			
 					>
-	            		{tag}
+	            		{role}
           			</Typography>
 				</div>
 
-				<a href="#" className="text-blue-gray-900 transition-colors hover:text-gray-900">
+				<Link href={`player-profile/${playerName}`} className="text-blue-gray-900 transition-colors hover:text-gray-900">
 					<Typography 
 						variant="h5" 
 						className="mb-2 normal-case"
@@ -67,27 +70,62 @@ export const PlayerCard = ({ img, tag, title, desc, label }: PlayerCardProps) =>
 						onPointerEnterCapture={undefined} 
 						onPointerLeaveCapture={undefined}
 					>
-            			{title}
+            			{playerName}
           			</Typography>
-				</a>
+				</Link>
 
-				<Typography 
-					className="mb-6 font-normal !text-gray-500"
-					placeholder={undefined} 
-					onPointerEnterCapture={undefined} 
-					onPointerLeaveCapture={undefined}
-				>
-		          	{desc}
-		        </Typography>
+				<div className="flex justify-between">
+					<div>
+						<Typography 
+							className="font-normal !text-gray-500"
+							placeholder={undefined} 
+							onPointerEnterCapture={undefined} 
+							onPointerLeaveCapture={undefined}
+						>
+							Frags: {frags}
+						</Typography>
 
-				<Button 
-					variant="outlined" 
-					placeholder={undefined} 
-					onPointerEnterCapture={undefined} 
-					onPointerLeaveCapture={undefined}
-				>
-					{label}
-				</Button>
+						<Typography 
+							className="font-normal !text-gray-500"
+							placeholder={undefined} 
+							onPointerEnterCapture={undefined} 
+							onPointerLeaveCapture={undefined}
+						>
+							Chickens: {chickens}
+						</Typography>
+					</div>
+
+					<div>
+						<Typography 
+							className="font-normal !text-gray-500"
+							placeholder={undefined} 
+							onPointerEnterCapture={undefined} 
+							onPointerLeaveCapture={undefined}
+						>
+							KD Ratio: {kd}
+						</Typography>
+
+						<Typography 
+							className="mb-6 font-normal !text-gray-500"
+							placeholder={undefined} 
+							onPointerEnterCapture={undefined} 
+							onPointerLeaveCapture={undefined}
+						>
+							Avg. Damage: {avgDamage}
+						</Typography>
+					</div>
+				</div>
+
+				<Link href={`player-profile/${playerName}`}>
+					<Button 
+						variant="outlined" 
+						placeholder={undefined} 
+						onPointerEnterCapture={undefined} 
+						onPointerLeaveCapture={undefined}
+					>
+						View More
+					</Button>
+				</Link>
 			</CardBody>
 		</Card>
 	);
