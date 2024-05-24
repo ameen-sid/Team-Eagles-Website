@@ -57,7 +57,7 @@ export const sendEmail = async ({ email, emailType, userId }: sendEmailProps) =>
 				from: process.env.DEFAULT_MAIL,
 				to: email,
 				subject: "Reset Your Password",
-				html: `<p>Click <a href="${process.env.DOMAIN}/reset-password?token=${token}">here</a> to "Reset your password" or copy and paste the link below in your browser.<br>${process.env.DOMAIN}/forgot-password?token=${token}</p>`,
+				html: `<p>Click <a href="${process.env.DOMAIN}/reset-password?token=${token}">here</a> to "Reset your password" or copy and paste the link below in your browser.<br>${process.env.DOMAIN}/reset-password?token=${token}</p>`,
 			};
 		}
 
