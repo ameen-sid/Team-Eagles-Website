@@ -47,8 +47,8 @@ const VerifyEmail = () => {
 			setCode({ ...code, passcode: "" });
 
 			router.push("/login");
+		} catch(error: any) {
 			
-		} catch(error:any) {
 			console.log("Verification Failed");
 			toast.error(error.message);
 		}

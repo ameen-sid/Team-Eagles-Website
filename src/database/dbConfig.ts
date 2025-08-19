@@ -32,7 +32,8 @@ export const connectDB = async () => {
 			process.exit(0);
 		});
 
-	} catch (error:any) {
+	} catch (error) {
+		
 		console.error("Error connecting to database: ");
 		console.error(error);
 		process.exit(1);

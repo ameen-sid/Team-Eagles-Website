@@ -8,8 +8,6 @@ import { uploadImageToCloudinary } from "@/utils/imageUploader";
 // Connect to Database
 connectDB();
 
-
-
 // Update Player Display Picture API
 export const POST = async (request: NextRequest) => {
 	try {
@@ -43,8 +41,7 @@ export const POST = async (request: NextRequest) => {
 			message: 'Image Updated successfully',
 			data: updatedProfile,
 		});
-
-	} catch(error:any) {
+	} catch(error: any) {
 		return NextResponse.json({ 
 			status: 500,
 			success: false,

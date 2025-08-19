@@ -7,8 +7,7 @@ export const hashPassword = async (password: any) => {
 		const salt = await bcryptjs.genSalt(10);
 
 		return await bcryptjs.hash(password, salt);
-
-	} catch (error:any) {
+	} catch (error: any) {
 		throw new Error(error.message);
 	}
 }

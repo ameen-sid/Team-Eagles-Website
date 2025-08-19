@@ -23,8 +23,7 @@ export const POST = async (request: NextRequest) => {
 
 		// return a response
 		return response;
-
-	} catch (error:any) {
+	} catch (error: any) {
 		return NextResponse.json({
 			status: 500,
 			success: false,

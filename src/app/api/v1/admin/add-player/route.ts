@@ -24,7 +24,6 @@ export const POST = async (request: NextRequest) => {
 
 		// check player already exist or not with playerName
 		const existPlayer = await Player.findOne({ playerName });
-
 		if (existPlayer) {
 			return NextResponse.json({
 				status: 409,
@@ -59,8 +58,7 @@ export const POST = async (request: NextRequest) => {
 			message: "Player Registered Successfully",
 			data: player,
 		});
-
-	} catch(error:any) {
+	} catch(error: any) {
 		return NextResponse.json({
 			status: 500,
 			success: false,

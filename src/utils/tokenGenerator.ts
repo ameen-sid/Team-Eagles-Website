@@ -12,7 +12,7 @@ export const generateToken = async (userId:any) => {
 		
 		// return the token
 		return jwt.sign({ userId }, process.env.JWT_SECRET, { expiresIn: '1d' });
-	} catch (error:any) {
+	} catch (error: any) {
 		throw new Error(error.message);
 	}
 }

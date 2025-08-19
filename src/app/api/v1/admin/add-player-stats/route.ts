@@ -13,7 +13,6 @@ export const PUT = async (request: NextRequest) => {
 		const body = await request.json();
 		const { matches, assists, damage, frags, chickens, playerId } = body;
 
-		
 		// validation on fetched data
 		if (!matches || !assists || !damage || !frags || !chickens || !playerId) {
 			return NextResponse.json({
@@ -25,7 +24,6 @@ export const PUT = async (request: NextRequest) => {
 
 		// check player is exist or not
 		const existPlayer = await Player.findOne({ playerId });
-
 		if (!existPlayer) {
 			return NextResponse.json({
 				status: 401,
@@ -63,8 +61,7 @@ export const PUT = async (request: NextRequest) => {
 			message: "Added Stats Successfully",
 			data: updatedPlayer,
 		});
-		
-	} catch(error:any) {
+	} catch(error: any) {
 		return NextResponse.json({
 			status: 500,
 			success: false,

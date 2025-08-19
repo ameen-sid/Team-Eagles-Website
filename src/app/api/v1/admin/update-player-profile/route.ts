@@ -47,8 +47,7 @@ export const PUT = async (request: NextRequest) => {
 			message: "Profile Updated Successfully",
 			data: playerDetails,
 		});
-
-	} catch(error:any) {
+	} catch(error: any) {
 		return NextResponse.json({
 			status: 500,
 			success: false,

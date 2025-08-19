@@ -29,7 +29,8 @@ const ResetPasswordEmail = () => {
 				email: ""
 			});
 			
-		} catch(error:any) {
+		} catch(error: any) {
+			
 			console.log("Failed to Send Email");
 			toast.error(error.message);
 		}

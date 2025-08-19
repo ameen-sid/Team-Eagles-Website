@@ -42,8 +42,8 @@ const ResetPassword = () => {
 			});
 
 			router.push("/login");
+		} catch(error: any) {
 			
-		} catch(error:any) {
 			console.log("Verification Failed");
 			toast.error(error.message);
 		}

@@ -62,8 +62,7 @@ export const POST = async (request: NextRequest) => {
 			success: true,
 			message: "Email verified successfully",
 		});
-
-	} catch (error:any) {
+	} catch (error: any) {
 		return NextResponse.json({
 			status: 500,
 			success: false,

@@ -1,11 +1,15 @@
 // Import the Required Modules
-import { v2 as cloudinary } from 'cloudinary';
+import { v2 as cloudinary } from "cloudinary";
 
 // Function to Connect to the Cloudinary
 export const cloudinaryConnect = async () => {
 	try {
 		// check if CLOUD_NAME, API_KEY, API_SECRET exists in .env file, otherwise throw an error
-		if ( !process.env.CLOUD_NAME || !process.env.API_KEY || !process.env.API_SECRET ) {
+		if (
+			!process.env.CLOUD_NAME ||
+			!process.env.API_KEY ||
+			!process.env.API_SECRET
+		) {
 			throw new Error("Environment variables are not defined.");
 		}
 
@@ -17,8 +21,7 @@ export const cloudinaryConnect = async () => {
 		});
 
 		console.log("Connected to Cloudinary Successfully");
-		
-	} catch(error:any) {
-		console.error("Error in Connecting to Cloudinary: ", error.message);
+	} catch (error) {
+		console.error("Error in Connecting to Cloudinary: ", error);
 	}
-}
+};

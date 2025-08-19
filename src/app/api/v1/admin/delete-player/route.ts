@@ -24,7 +24,6 @@ export const DELETE = async (request: NextRequest) => {
 
 		// check user is exist or not
 		const playerDetails = await Player.findOne({ playerName });
-
 		if (!playerDetails) {
 			return NextResponse.json({
 				status: 404,
@@ -42,8 +41,7 @@ export const DELETE = async (request: NextRequest) => {
 			success: true,
 			message: "Player Deleted Successfully",
 		});
-		
-	} catch(error:any) {
+	} catch(error: any) {
 		return NextResponse.json({
 			status: 500,
 			success: false,

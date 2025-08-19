@@ -35,7 +35,6 @@ export const POST = async (request: NextRequest) => {
 
 		// check if user already exists
 		const user = await User.findOne({ email });
-
 		if(user) {
 			return NextResponse.json({
 				status: 409,
@@ -70,8 +69,7 @@ export const POST = async (request: NextRequest) => {
 			message: "User registered successfully",
 			data: savedUser
 		});
-		
-	} catch(error:any) {
+	} catch(error: any) {
 		return NextResponse.json({
 			status: 500,
 			success: false,

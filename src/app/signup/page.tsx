@@ -42,8 +42,8 @@ const Signup = () => {
 			});
 
 			router.push("/login");
-
-		} catch(error:any) {
+		} catch(error: any) {
+			
 			console.log("Signup Failed");
 			toast.error(error.message);
 		}

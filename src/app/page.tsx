@@ -7,14 +7,14 @@ import ExplorePlayers from "./home/explore-players";
 
 // Function of Home Page
 export default function Home() {
-  return (
-    <>
-      <NavBar />
-      <Hero />
-      <OurImpressiveStats />
-      <ExplorePlayers />
-      {/* <Events /> */}
-      <Footer />
-    </>
-  );
+	return (
+		<>
+			<NavBar />
+			<Hero />
+			<OurImpressiveStats />
+			<ExplorePlayers />
+			{/* <Events /> */}
+			<Footer />
+		</>
+	);
 }

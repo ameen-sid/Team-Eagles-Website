@@ -36,15 +36,13 @@ export const ExplorePlayers = () => {
 			setPlayers(newPlayers);
 			// console.log("Players: ",newPlayers);
 			
-		} catch(error:any) {
+		} catch(error) {
 			console.log("Failed to fetch players: ", error);
 		}
 	}
 
 	useEffect(() => {
-
 		getAllPlayers();
-
 	},[]);
 
 	return (

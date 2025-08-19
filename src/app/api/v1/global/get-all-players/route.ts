@@ -28,8 +28,7 @@ export const POST = async (request: NextRequest) => {
 			message: "All Players Fetched Successfully",
 			data: allPlayers,
 		});
-			
-	} catch(error:any) {
+	} catch(error: any) {
 		return NextResponse.json({
 			status: 500,
 			success: false,

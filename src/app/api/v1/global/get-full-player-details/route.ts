@@ -24,7 +24,6 @@ export const POST = async (request: NextRequest) => {
 
 		// find player details by playerName
 		const playerDetails = await Player.findOne({ playerName: playername });
-
 		if (!playerDetails) {
 			return NextResponse.json({
 				status: 401,
@@ -40,8 +39,7 @@ export const POST = async (request: NextRequest) => {
 			message: "Player Details Retrieved Successfully!",
 			data: playerDetails,
 		});
-		
-	} catch(error:any) {
+	} catch(error: any) {
 		return NextResponse.json({
 			status: 500,
 			success: false,

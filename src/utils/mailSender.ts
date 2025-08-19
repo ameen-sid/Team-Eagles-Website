@@ -67,7 +67,7 @@ export const sendEmail = async ({ email, emailType, userId }: sendEmailProps) =>
 		// return a response
 		return mailResponse;
 
-	} catch (error:any) {
+	} catch (error: any) {
 		throw new Error(error.message);
 	}
 }

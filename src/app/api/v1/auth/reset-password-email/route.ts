@@ -25,7 +25,6 @@ export const POST = async (request: NextRequest) => {
 
 		// check user is exist or not
 		const user = await User.findOne({ email });
-
 		if(!user) {
 			return NextResponse.json({
 				status: 401,
@@ -43,8 +42,7 @@ export const POST = async (request: NextRequest) => {
 			success: true,
 			message: "Email sent successfully, please check your email!",
 		});
-
-	} catch (error:any) {
+	} catch (error: any) {
 		return NextResponse.json({
 			status: 500,
 			success: false,

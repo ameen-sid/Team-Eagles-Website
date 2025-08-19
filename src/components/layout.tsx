@@ -5,9 +5,7 @@ import React from "react";
 import { ThemeProvider } from "@material-tailwind/react";
 
 // Interface of Layout props
-interface Props {
-	children: any
-}
+interface Props { children: any }
 
 // Function of Layout Component
 export const Layout = ({ children }: Props) => {
