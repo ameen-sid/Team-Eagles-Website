@@ -150,4 +150,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## 📞 **Contact**
 
 Ameen Sid - [ameensid7@gmail.com]
-Project Link: [https://github.com/your-username/Team-Eagles-Website](https://github.com/ameen-sid/Team-Eagles-Website)
+Project Link: [https://github.com/ameen-sid/Team-Eagles-Website](https://github.com/ameen-sid/Team-Eagles-Website)
